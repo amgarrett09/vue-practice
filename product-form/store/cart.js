@@ -8,7 +8,9 @@ export const mutations = {
     state.items.push(...items)
   },
   REMOVE(state, itemsToRemove) {
-    state.items = state.items.filter(item => !itemsToRemove.includes(item))
+    itemsToRemove.forEach(item => {
+      state.items = state.items.filter(oldItem => oldItem.name !== item.name)
+    })
   },
   SET_TOTAL(state) {
     state.total = state.items.reduce((acc, item) => acc + item.price, 0)
