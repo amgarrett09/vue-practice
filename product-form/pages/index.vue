@@ -5,7 +5,7 @@
         <cart-button />
       </nuxt-link>
       <div class="form-container">
-        <OrderForm />
+        <OrderForm :products="products" />
       </div>
     </section>
   </main>
@@ -18,6 +18,19 @@ export default {
   components: {
     OrderForm,
     CartButton
+  },
+  async asyncData({ $axios, error }) {
+    try {
+      const { data } = await $axios.get('http://localhost:5000/products')
+      return {
+        products: data
+      }
+    } catch (err) {
+      error({
+        statusCode: 503,
+        message: 'Unable to fetch products at this time. Please try again.'
+      })
+    }
   }
 }
 </script>

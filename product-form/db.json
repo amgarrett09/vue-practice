@@ -1,0 +1,8 @@
+{
+  "products": [
+    { "name": "Foo", "price": 200 },
+    { "name": "Bar", "price": 350 },
+    { "name": "Baz", "price": 125 },
+    { "name": "Mike", "price": 11000 }
+  ]
+}

@@ -27,14 +27,14 @@ export default {
   components: {
     ProductCard
   },
+  props: {
+    products: {
+      type: Array,
+      required: true
+    }
+  },
   data() {
     return {
-      products: [
-        { name: 'Web Developerment', price: 300 },
-        { name: 'Design', price: 400 },
-        { name: 'Integration', price: 250 },
-        { name: 'Training', price: 220 }
-      ],
       totalPrice: 0,
       activeItems: []
     }

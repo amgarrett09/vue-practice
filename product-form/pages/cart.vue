@@ -2,8 +2,8 @@
   <div>
     <template v-if="items.length > 0">
       <cart-item
-        v-for="item in items"
-        :key="item.name"
+        v-for="(item, i) in items"
+        :key="item.name + i"
         :name="item.name"
         :price="item.price"
       />
